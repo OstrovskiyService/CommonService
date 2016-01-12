@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CarWash-UA бронирование моек в твоем городе</title>
+    <link rel="stylesheet" href="style.css"/>
+    <script src="jquery-2.1.4.min.js"></script>
+    <script src="ajax.js" type="text/javascript"></script>
+    
+</head>
+<body>
+    <div class="wrapper main_wrapper">
+        <div class="header-main">
+            <div class="header-main_navigation main-navigation">
+                <div class="main-navigation_logo_box">
+                    <div class="main-navigation_logo_logo">
+                        
+                    </div>
+                </div>
+                <div class="main-navigation_navigation_wrapper">
+                    <div class="main-navigation_navigation_right_city">
+                        <select id="city" class="styled-select">
+												<option value="1" selected="selected">Днепропетровск</option>
+												<option value="2">Северодвинск</option>
+												<option value="3">Саратов</option>
+												<option value="4">Москва</option>
+												<option value="5">Ярославль</option>
+											</select>
+                    </div>
+                    <div class="main-navigation_right_enter main-navigation_right_button">
+                        Вход
+                    </div>
+                    <div class="main-navigation_right_registration main-navigation_right_button">
+                        Регистрация
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-body">
+            <div class="main-body_wrapper">
+                <div class="main-body_header">
+                    
+                </div>
+                <div class="main-body_block main-body_left">
+                    <div class="main-body_left_section_choose main-body_left_section_choose_one visible" id="choose-one">
+                       <h2 class="main-body_left_section_choose_header main-body_left_section_choose_header_first">
+                               Шаг 1. Выберите тип кузова
+                           </h2>
+                        <div class="main-body_left_section_choose_point-box" id="bike">
+                           
+                            <div class="main-body_left_section_choose_point-box_image main-body_left_section_choose_point-box_image_bike">
+                                
+                            </div>
+                            <div class="main-body_left_section_choose_point-box_data">
+                               
+                                <div class="main-body_left_section_choose_point-box_data_header">
+                                    Мотоциклы и квадроциклы
+                                </div>
+                                <div class="main-body_left_section_choose_point-box_data_text">
+                                   
+                                    <div class="main-body_left_section_choose_point-box_data_text_text">
+                                        Yamaha YBR125, Kawasaki Ninja 250R, Honda GL1800A Gold Wing, Ducati Monster 696, Suzuki GSX1000R, BMW K 1300 S, Honda Hornet CB 600
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="main-body_left_section_choose_point-box" id="golf">
+                            <div class="main-body_left_section_choose_point-box_image main-body_left_section_choose_point-box_image_golf"></div>
+                            <div class="main-body_left_section_choose_point-box_data">
+                                <div class="main-body_left_section_choose_point-box_data_header">
+малый и гольф класс</div>
+                                <div class="main-body_left_section_choose_point-box_data_text">
+                                    <div class="main-body_left_section_choose_point-box_data_text_text">Lada Kalina, Volkswagen Golf/Polo, Kia Rio, Hyundai Accent, Ford Fiesta, Toyota Yaris</div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                    
+                    <div class="main-body_left_section_choose_point-box choose_point-box_checked" id="business">
+                        <div class="main-body_left_section_choose_point-box_image main-body_left_section_choose_point-box_image_busines"></div>
+                        <div class="main-body_left_section_choose_point-box_data">
+                            <div class="main-body_left_section_choose_point-box_data_header">
+средний и бизнес класс</div>
+                            <div class="main-body_left_section_choose_point-box_data_text">
+                                <div class="main-body_left_section_choose_point-box_data_text_text">Lada Priora, Chevrolet Cruze, Toyota Camry, Renault Logan/Symbol, Mazda 6, BMW 3/5 series, Volkswagen Passat, Mercedes C/E class</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="main-body_left_section_choose_point-box" id="universal">
+                        <div class="main-body_left_section_choose_point-box_image main-body_left_section_choose_point-box_image_universal"></div>
+                        <div class="main-body_left_section_choose_point-box_data">
+                            <div class="main-body_left_section_choose_point-box_data_header">
+Универсал</div>
+                            <div class="main-body_left_section_choose_point-box_data_text">
+                                <div class="main-body_left_section_choose_point-box_data_text_text">ВАЗ Largus, ВАЗ 2111, Audi A4/A6 Avant, Volkswagen Passat Variant</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="main-body_left_section_choose_point-box" id="parket">
+                        <div class="main-body_left_section_choose_point-box_image main-body_left_section_choose_point-box_image_parket"></div>
+                        <div class="main-body_left_section_choose_point-box_data">
+                            <div class="main-body_left_section_choose_point-box_data_header">
+паркетники и минивены</div>
+                            <div class="main-body_left_section_choose_point-box_data_text">
+                                <div class="main-body_left_section_choose_point-box_data_text_text">Renault Duster, Mitsubishi Outlander, Chevrolet Niva, Toyota Rav4, Hyundai ix35, Skoda Yeti, Ford C-MAX</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="main-body_left_section_choose_point-box" id="4x4">
+                        <div class="main-body_left_section_choose_point-box_image main-body_left_section_choose_point-box_image_4x4"></div>
+                        <div class="main-body_left_section_choose_point-box_data">
+                            <div class="main-body_left_section_choose_point-box_data_header">
+внедорожники</div>
+                            <div class="main-body_left_section_choose_point-box_data_text">
+                                <div class="main-body_left_section_choose_point-box_data_text_text">Toyota Land Cruiser 100/200/Prado, Mercedes G-class, Nissan Patrol, Lexus LX470/570, Audi Q7, BMW X5, Mitsubishi Pajero
+</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="main-body_left_section_choose_point-box" id="micro">
+                        <div class="main-body_left_section_choose_point-box_image main-body_left_section_choose_point-box_image_microbus"></div>
+                        <div class="main-body_left_section_choose_point-box_data">
+                            <div class="main-body_left_section_choose_point-box_data_header">микроавтобусы</div>
+                            <div class="main-body_left_section_choose_point-box_data_text">
+                                <div class="main-body_left_section_choose_point-box_data_text_text">Toyota Alphard, Mercedes Viano, Ford Transit, Fiat Ducato, Nissan Sirena, Volkswagen Multivan, Opel Vivaro
+</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="main-body_left_section_choose_point-box" id="gazel">
+                        <div class="main-body_left_section_choose_point-box_image main-body_left_section_choose_point-box_image_gazel"></div>
+                        <div class="main-body_left_section_choose_point-box_data">
+                            <div class="main-body_left_section_choose_point-box_data_header">Газель</div>
+                            <div class="main-body_left_section_choose_point-box_data_text">
+                                <div class="main-body_left_section_choose_point-box_data_text_text">ГАЗ Баргузин/Соболь
+</div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    
+                    
+                    <div class="main-body_left_section_choose main-body_left_section_choose_two" id="choose-two">
+                       <h2 class="main-body_left_section_choose_header">
+                               Шаг 1. Выберите тип мойки
+                           </h2>
+                        <div class="main-body_left_section_choose_point-box choose_point-box_wash-type point-box_wash-type_one" id="easy">
+                            <div class="main-body_left_section_choose_point-box_image choose_point-box_wash-type_image"></div>
+                        <div class="main-body_left_section_choose_point-box_data">
+                            <div class="main-body_left_section_choose_point-box_data_header wash-type_header wash-type_header_one">Сбивание грязи</div>
+                            <div class="main-body_left_section_choose_point-box_data_text">
+                                <div class="main-body_left_section_choose_point-box_data_text_text">Наружная мойка без автохимии, без сушки, без мойки ковриков
+</div>
+                            </div>
+                            </div>
+                        </div>
+                        
+                        <div class="main-body_left_section_choose_point-box choose_point-box_wash-type point-box_wash-type_two" id="technical">
+                            <div class="main-body_left_section_choose_point-box_image choose_point-box_wash-type_image"></div>
+                        <div class="main-body_left_section_choose_point-box_data">
+                            <div class="main-body_left_section_choose_point-box_data_header wash-type_header wash-type_header_two">Техническая мойка</div>
+                            <div class="main-body_left_section_choose_point-box_data_text">
+                                <div class="main-body_left_section_choose_point-box_data_text_text">Наружная мойка с автохимией, без сушки, без мойки ковриков
+</div>
+                            </div>
+                            </div>
+                        </div>
+                        
+                        <div class="main-body_left_section_choose_point-box choose_point-box_wash-type point-box_wash-type_three" id="one-star">
+                            <div class="main-body_left_section_choose_point-box_image choose_point-box_wash-type_image"></div>
+                        <div class="main-body_left_section_choose_point-box_data">
+                            <div class="main-body_left_section_choose_point-box_data_header wash-type_header wash-type_header_three">Кузов + коврики</div>
+                            <div class="main-body_left_section_choose_point-box_data_text">
+                                <div class="main-body_left_section_choose_point-box_data_text_text">Наружная мойка с автохимией, с сушкой, мойка ковриков
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="main-body_left_section_choose_point-box choose_point-box_wash-type point-box_wash-type_four" id="complex">
+                            <div class="main-body_left_section_choose_point-box_image choose_point-box_wash-type_image"></div>
+                        <div class="main-body_left_section_choose_point-box_data">
+                            <div class="main-body_left_section_choose_point-box_data_header wash-type_header wash-type_header_four">Комплекс</div>
+                            <div class="main-body_left_section_choose_point-box_data_text">
+                                <div class="main-body_left_section_choose_point-box_data_text_text">Наружная мойка с автохимией, с сушкой, пылесос салона, чистка стекол, чистка пластиковых деталей, мойка ковриков
+</div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-body_left_section_choose main-body_left_section_choose_three" id="choose-three">
+                        
+                       <h2 class="main-body_left_section_choose_header main-body_left_section_choose_header-long">
+                               Шаг 1. Выберите дополнительные услуги
+                           </h2>
+                           <div class="choose_point-box_add_service-case">
+                        <div class="main-body_left_section_choose_point-box choose_point-box_add_service" id="add_service_1">
+                            <div class="main-body_left_section_choose_point-box_image choose_point-box_add_service_image add_service_image_service_1"></div>
+                        <div class="main-body_left_section_choose_point-box_data main-body_left_section_choose_point-box_data_add_service">
+                            <div class="main-body_left_section_choose_point-box_data_header choose_point-box_data_header_add_service">Пылесос салона</div>
+                           
+                            </div>
+                        </div>
+                        
+                        <div class="main-body_left_section_choose_point-box choose_point-box_add_service" id="add_service_2">
+                            <div class="main-body_left_section_choose_point-box_image choose_point-box_add_service_image add_service_image_service_2"></div>
+                        <div class="main-body_left_section_choose_point-box_data main-body_left_section_choose_point-box_data_add_service">
+                            <div class="main-body_left_section_choose_point-box_data_header choose_point-box_data_header_add_service">Жидкий воск</div>
+                           
+                            </div>
+                        </div>
+                        
+                        <div class="main-body_left_section_choose_point-box choose_point-box_add_service" id="add_service_3">
+                            <div class="main-body_left_section_choose_point-box_image choose_point-box_add_service_image add_service_image_service_3"></div>
+                        <div class="main-body_left_section_choose_point-box_data main-body_left_section_choose_point-box_data_add_service">
+                            <div class="main-body_left_section_choose_point-box_data_header choose_point-box_data_header_add_service">Мойка двигателя</div>
+                           
+                            </div>
+                        </div>
+                        
+                        <div class="main-body_left_section_choose_point-box choose_point-box_add_service" id="add_service_4">
+                            <div class="main-body_left_section_choose_point-box_image choose_point-box_add_service_image add_service_image_service_4"></div>
+                        <div class="main-body_left_section_choose_point-box_data main-body_left_section_choose_point-box_data_add_service">
+                            <div class="main-body_left_section_choose_point-box_data_header choose_point-box_data_header_add_service">Удаление следов насекомых</div>
+                           
+                            </div>
+                        </div>
+                        
+                        <div class="main-body_left_section_choose_point-box choose_point-box_add_service" id="add_service_5">
+                            <div class="main-body_left_section_choose_point-box_image choose_point-box_add_service_image add_service_image_service_5"></div>
+                        <div class="main-body_left_section_choose_point-box_data main-body_left_section_choose_point-box_data_add_service">
+                            <div class="main-body_left_section_choose_point-box_data_header choose_point-box_data_header_add_service">Чернение брызговиков</div>
+                           
+                            </div>
+                        </div>
+                        
+                        <div class="main-body_left_section_choose_point-box choose_point-box_add_service" id="add_service_6">
+                            <div class="main-body_left_section_choose_point-box_image choose_point-box_add_service_image add_service_image_service_6"></div>
+                        <div class="main-body_left_section_choose_point-box_data main-body_left_section_choose_point-box_data_add_service">
+                            <div class="main-body_left_section_choose_point-box_data_header choose_point-box_data_header_add_service">Чистка пластика в салоне</div>
+                           
+                            </div>
+                        </div>
+                        
+                        <div class="main-body_left_section_choose_point-box choose_point-box_add_service" id="add_service_7">
+                            <div class="main-body_left_section_choose_point-box_image choose_point-box_add_service_image add_service_image_service_7"></div>
+                        <div class="main-body_left_section_choose_point-box_data main-body_left_section_choose_point-box_data_add_service">
+                            <div class="main-body_left_section_choose_point-box_data_header choose_point-box_data_header_add_service">Чернение колес</div>
+                           
+                            </div>
+                        </div>
+                        
+                        <div class="main-body_left_section_choose_point-box choose_point-box_add_service" id="add_service_8">
+                            <div class="main-body_left_section_choose_point-box_image choose_point-box_add_service_image add_service_image_service_8"></div>
+                        <div class="main-body_left_section_choose_point-box_data main-body_left_section_choose_point-box_data_add_service">
+                            <div class="main-body_left_section_choose_point-box_data_header choose_point-box_data_header_add_service">Мойка дисков</div>
+                           
+                            </div>
+                        </div>
+                        
+                        <div class="main-body_left_section_choose_point-box choose_point-box_add_service" id="add_service_9">
+                            <div class="main-body_left_section_choose_point-box_image choose_point-box_add_service_image add_service_image_service_9"></div>
+                        <div class="main-body_left_section_choose_point-box_data main-body_left_section_choose_point-box_data_add_service">
+                            <div class="main-body_left_section_choose_point-box_data_header choose_point-box_data_header_add_service">Очистка от почек</div>
+                           
+                            </div>
+                        </div>
+                        
+                        <div class="main-body_left_section_choose_point-box choose_point-box_add_service" id="add_service_10">
+                            <div class="main-body_left_section_choose_point-box_image choose_point-box_add_service_image add_service_image_service_10"></div>
+                        <div class="main-body_left_section_choose_point-box_data main-body_left_section_choose_point-box_data_add_service">
+                            <div class="main-body_left_section_choose_point-box_data_header choose_point-box_data_header_add_service">Нанозащита</div>
+                           
+                            </div>
+                        </div>
+                        
+                        <div class="main-body_left_section_choose_point-box choose_point-box_add_service" id="add_service_11">
+                            <div class="main-body_left_section_choose_point-box_image choose_point-box_add_service_image add_service_image_service_11"></div>
+                        <div class="main-body_left_section_choose_point-box_data main-body_left_section_choose_point-box_data_add_service">
+                            <div class="main-body_left_section_choose_point-box_data_header choose_point-box_data_header_add_service">Чистка стекол</div>
+                           
+                            </div>
+                        </div>
+                        
+                        <div class="main-body_left_section_choose_point-box choose_point-box_add_service" id="add_service_12">
+                            <div class="main-body_left_section_choose_point-box_image choose_point-box_add_service_image add_service_image_service_12"></div>
+                        <div class="main-body_left_section_choose_point-box_data main-body_left_section_choose_point-box_data_add_service">
+                            <div class="main-body_left_section_choose_point-box_data_header choose_point-box_data_header_add_service">Чистка кожи в салоне</div>
+                           
+                            </div>
+                        </div>
+                        
+                        <div class="main-body_left_section_choose_point-box choose_point-box_add_service" id="add_service_13">
+                            <div class="main-body_left_section_choose_point-box_image choose_point-box_add_service_image add_service_image_service_13"></div>
+                        <div class="main-body_left_section_choose_point-box_data main-body_left_section_choose_point-box_data_add_service">
+                            <div class="main-body_left_section_choose_point-box_data_header choose_point-box_data_header_add_service">Сушка кузова</div>
+                           
+                            </div>
+                        </div>
+                        
+                        <div class="main-body_left_section_choose_point-box choose_point-box_add_service" id="add_service_14">
+                            <div class="main-body_left_section_choose_point-box_image choose_point-box_add_service_image add_service_image_service_14"></div>
+                        <div class="main-body_left_section_choose_point-box_data main-body_left_section_choose_point-box_data_add_service">
+                            <div class="main-body_left_section_choose_point-box_data_header choose_point-box_data_header_add_service">Химчистка</div>
+                           
+                            </div>
+                        </div>
+                        
+                        <div class="main-body_left_section_choose_point-box choose_point-box_add_service" id="add_service_15">
+                            <div class="main-body_left_section_choose_point-box_image choose_point-box_add_service_image add_service_image_service_15"></div>
+                        <div class="main-body_left_section_choose_point-box_data main-body_left_section_choose_point-box_data_add_service">
+                            <div class="main-body_left_section_choose_point-box_data_header choose_point-box_data_header_add_service">Проверка давления в шинах</div>
+                           
+                            </div>
+                        </div>
+                        
+                        <div class="main-body_left_section_choose_point-box choose_point-box_add_service" id="add_service_16">
+                            <div class="main-body_left_section_choose_point-box_image choose_point-box_add_service_image add_service_image_service_16"></div>
+                        <div class="main-body_left_section_choose_point-box_data main-body_left_section_choose_point-box_data_add_service">
+                            <div class="main-body_left_section_choose_point-box_data_header choose_point-box_data_header_add_service">Мойка арок</div>
+                           
+                            </div>
+                        </div>
+                        
+                        <div class="main-body_left_section_choose_point-box choose_point-box_add_service" id="add_service_17">
+                            <div class="main-body_left_section_choose_point-box_image choose_point-box_add_service_image add_service_image_service_17"></div>
+                        <div class="main-body_left_section_choose_point-box_data main-body_left_section_choose_point-box_data_add_service">
+                            <div class="main-body_left_section_choose_point-box_data_header choose_point-box_data_header_add_service">Обработка силиконом резинок</div>
+                           
+                            </div>
+                        </div>
+                        
+                        <div class="main-body_left_section_choose_point-box choose_point-box_add_service" id="add_service_18">
+                            <div class="main-body_left_section_choose_point-box_image choose_point-box_add_service_image add_service_image_service_18"></div>
+                        <div class="main-body_left_section_choose_point-box_data main-body_left_section_choose_point-box_data_add_service">
+                            <div class="main-body_left_section_choose_point-box_data_header choose_point-box_data_header_add_service">Пылесос багажника</div>
+                           
+                            </div>
+                        </div>
+                        
+                        <div class="main-body_left_section_choose_point-box choose_point-box_add_service" id="add_service_19">
+                            <div class="main-body_left_section_choose_point-box_image choose_point-box_add_service_image add_service_image_service_19"></div>
+                        <div class="main-body_left_section_choose_point-box_data main-body_left_section_choose_point-box_data_add_service">
+                            <div class="main-body_left_section_choose_point-box_data_header choose_point-box_data_header_add_service">Чернение ковриков</div>
+                           
+                            </div>
+                        </div>
+                        
+                        <div class="main-body_left_section_choose_point-box choose_point-box_add_service" id="add_service_20">
+                            <div class="main-body_left_section_choose_point-box_image choose_point-box_add_service_image add_service_image_service_20"></div>
+                        <div class="main-body_left_section_choose_point-box_data main-body_left_section_choose_point-box_data_add_service">
+                            <div class="main-body_left_section_choose_point-box_data_header choose_point-box_data_header_add_service">Мойка ковриков</div>
+                           
+                            </div>
+                        </div>
+                        
+                        <div class="main-body_left_section_choose_point-box choose_point-box_add_service" id="add_service_21">
+                            <div class="main-body_left_section_choose_point-box_image choose_point-box_add_service_image add_service_image_service_21"></div>
+                        <div class="main-body_left_section_choose_point-box_data main-body_left_section_choose_point-box_data_add_service">
+                            <div class="main-body_left_section_choose_point-box_data_header choose_point-box_data_header_add_service">Мойка дисков изнутри</div>
+                           
+                            </div>
+                        </div>
+                        
+                        <div class="main-body_left_section_choose_point-box choose_point-box_add_service" id="add_service_22">
+                            <div class="main-body_left_section_choose_point-box_image choose_point-box_add_service_image add_service_image_service_22"></div>
+                        <div class="main-body_left_section_choose_point-box_data main-body_left_section_choose_point-box_data_add_service">
+                            <div class="main-body_left_section_choose_point-box_data_header choose_point-box_data_header_add_service">Кондиционер кожи</div>
+                           
+                            </div>
+                        </div>
+                        
+                        <div class="main-body_left_section_choose_point-box choose_point-box_add_service" id="add_service_23">
+                            <div class="main-body_left_section_choose_point-box_image choose_point-box_add_service_image add_service_image_service_23"></div>
+                        <div class="main-body_left_section_choose_point-box_data main-body_left_section_choose_point-box_data_add_service">
+                            <div class="main-body_left_section_choose_point-box_data_header choose_point-box_data_header_add_service">Антидождь</div>
+                           
+                            </div>
+                        </div>
+                        
+                        <div class="main-body_left_section_choose_point-box choose_point-box_add_service" id="add_service_24">
+                            <div class="main-body_left_section_choose_point-box_image choose_point-box_add_service_image add_service_image_service_24"></div>
+                        <div class="main-body_left_section_choose_point-box_data main-body_left_section_choose_point-box_data_add_service">
+                            <div class="main-body_left_section_choose_point-box_data_header choose_point-box_data_header_add_service">Мойка порогов</div>
+                           
+                            </div>
+                        </div>
+                        
+                        <div class="main-body_left_section_choose_point-box choose_point-box_add_service" id="add_service_25">
+                            <div class="main-body_left_section_choose_point-box_image choose_point-box_add_service_image add_service_image_service_25"></div>
+                        <div class="main-body_left_section_choose_point-box_data main-body_left_section_choose_point-box_data_add_service">
+                            <div class="main-body_left_section_choose_point-box_data_header choose_point-box_data_header_add_service">Продувка радиатора АВД</div>
+                           
+                            </div>
+                        </div>
+                        
+                        <div class="main-body_left_section_choose_point-box choose_point-box_add_service" id="add_service_26">
+                            <div class="main-body_left_section_choose_point-box_image choose_point-box_add_service_image add_service_image_service_26"></div>
+                        <div class="main-body_left_section_choose_point-box_data main-body_left_section_choose_point-box_data_add_service">
+                            <div class="main-body_left_section_choose_point-box_data_header choose_point-box_data_header_add_service">Антисоль</div>
+                           
+                            </div>
+                        </div>
+                        
+                        <div class="main-body_left_section_choose_point-box choose_point-box_add_service" id="add_service_27">
+                            <div class="main-body_left_section_choose_point-box_image choose_point-box_add_service_image add_service_image_service_27"></div>
+                        <div class="main-body_left_section_choose_point-box_data main-body_left_section_choose_point-box_data_add_service">
+                            <div class="main-body_left_section_choose_point-box_data_header choose_point-box_data_header_add_service">Антибитум</div>
+                           
+                            </div>
+                        </div>
+                        
+                        <div class="main-body_left_section_choose_point-box choose_point-box_add_service" id="add_service_28">
+                            <div class="main-body_left_section_choose_point-box_image choose_point-box_add_service_image add_service_image_service_28"></div>
+                        <div class="main-body_left_section_choose_point-box_data main-body_left_section_choose_point-box_data_add_service">
+                            <span class="main-body_left_section_choose_point-box_data_header choose_point-box_data_header_add_service">Обработка внешнего хрома</div>
+                           
+                            </span>
+                        </div>
+                        
+                        <div class="main-body_left_section_choose_point-box choose_point-box_add_service" id="add_service_29">
+                            <div class="main-body_left_section_choose_point-box_image choose_point-box_add_service_image add_service_image_service_29"></div>
+                        <div class="main-body_left_section_choose_point-box_data main-body_left_section_choose_point-box_data_add_service">
+                            <div class="main-body_left_section_choose_point-box_data_header choose_point-box_data_header_add_service">Обработка замков от замерзания</div>
+                           
+                            </div>
+                        </div>
+                        
+                        <div class="main-body_left_section_choose_point-box choose_point-box_add_service" id="add_service_30">
+                            <div class="main-body_left_section_choose_point-box_image choose_point-box_add_service_image add_service_image_service_30"></div>
+                        <div class="main-body_left_section_choose_point-box_data main-body_left_section_choose_point-box_data_add_service">
+                            <div class="main-body_left_section_choose_point-box_data_header choose_point-box_data_header_add_service">Горячий воск</div>
+                           
+                            </div>
+                        </div>
+                        
+                        <div class="main-body_left_section_choose_point-box choose_point-box_add_service" id="add_service_31">
+                            <div class="main-body_left_section_choose_point-box_image choose_point-box_add_service_image add_service_image_service_31"></div>
+                        <div class="main-body_left_section_choose_point-box_data main-body_left_section_choose_point-box_data_add_service">
+                            <div class="main-body_left_section_choose_point-box_data_header choose_point-box_data_header_add_service">Полировка</div>
+                           
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    
+                    
+                    <div class="main-body_left_section_choose main-body_left_section_choose_four" id="choose-four">
+                        
+                    </div>
+                    <div class="main-body_left_section_choose main-body_left_section_choose_five">
+                        
+                    </div>
+                    <div class="main-body_left_section_choose main-body_left_section_choose_six">
+                        
+                    </div>
+                </div>
+                <div class="main-body_block main-body_right">
+                    <p class="main-body_right-text">
+                        Выбирите тип кузова, тип мойки и дополнительные услуги, которые Вы бы хотели получить для Вашего бронирования
+                    </p>
+                    <div class="main-body_right_check" id="check">
+                        <div class="main-body_right_check_inner-container">
+                           <p class="main-body_right_check_inner-container_field main-body_right_check_inner-container_field_price hidden">
+                               <span class="main-body_right_check_inner-container_field_text main-body_right_check_inner-container_field_text-price" id="check-price">
+                                   </span><span class="main-body_right_check_inner-container_field_text main-body_right_check_inner-container_field_text-price-uah">&#8372;</span>
+                               
+                           </p>
+                           <p class="main-body_right_check_inner-container_field main-body_right_check_inner-container_field_wash-name hidden">
+                           <span class="main-body_right_check_inner-container_field_text main-body_right_check_inner-container_field_text-wash-name" id="check-wash-name">
+                                   
+                               </span>
+                           </p>
+                           <p class="main-body_right_check_inner-container_field main-body_right_check_inner-container_field_car-type">
+                                <span class="main-body_right_check_inner-container_field_text">
+                                    Тип кузова:
+                                </span>
+                                <span class="main-body_right_button_choose hidden" id="check-car-type"></span>
+                               </p>
+                            <p class="main-body_right_check_inner-container_field main-body_right_check_inner-container_field_wash-type">
+                                <span class="main-body_right_check_inner-container_field_text">
+                                    Вид мойки:
+                                </span>
+                                <span class="main-body_right_button_choose hidden" id="check-service"></span>
+                            </p>
+                            <p class="main-body_right_check_inner-container_field main-body_right_check_inner-container_field_add-service">
+                                <span class="main-body_right_check_inner-container_field_text">
+                                    Доп.услуги:
+                                </span>
+                                <span class="main-body_right_button_choose hidden" id="check-add-service"></span>
+                            </p>
+                            <div class="main-body_right_check_inner-container_field_time">
+                                <span class="main-body_right_check_inner-container_field_text hidden" id="check-begin">
+                                    начало мойки:
+                                </span>
+                                <span class="main-body_right_text_choice_date hidden" id="check-date">
+                                    10 января,
+                                </span>
+                                <span class="main-body_right_text_choice_time hidden" id="check-time">
+                                    20:00
+                                </span>
+                                <br/>
+                                <span class="main-body_right_check_inner-container_field_text hidden" id="check-duration-name">
+                                    время мойки:
+                                </span>
+                                <span class="main-body_right_text_choice_date hidden" id="check-duration">
+                                    30 минут
+                                </span>
+                                <div class="main-body_right_text_choice_button_submit disabled" id="check-submit">
+                                    подтвердить
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            
+        </div>
+    </div>
+</body>
+</html>
